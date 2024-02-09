@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperSort</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f7f7f7] h-screen flex flex-col">
+    <header class="bg-white w-full p-4 flex justify-center">
+        <h2 class="text-xl font-semibold">
+            PaperSort
+        </h2>
+    </header>
+
+    <main class="flex justify-evenly items-center flex-1 p-5">
+        <div class="h-full w-1/3 flex flex-col items-center justify-center gap-5">
+            <div id="input" class="flex flex-col items-center justify-center flex-1 w-full text-black/65 font-semibold bg-gray-200 p-3 rounded border-2 border-dashed border-black/20 cursor-pointer duration-150 opacity-70 hover:opacity-95">
+                <form id="form" action="post.html" method="post" enctype="multipart/form-data" class="hidden">
+                    <input type="file" accept="application/pdf" name="file" id="file" />
+                </form>
+                <img src="cloud.png" class="aspect-square w-8" />
+                Click to upload Your PDF
+            </div>
+
+            <button id="submit-btn" class="hidden w-full bg-black/80 text-white/80 font-semibold p-3 rounded duration-150 hover:bg-black/90">
+                Sort
+            </button>
+
+            <script>
+                document.getElementById('input').addEventListener('click', () => {
+                    document.getElementById('file').click();
+                });
+
+                document.querySelector('#file').addEventListener('change', (e) => {
+                    const file = e.target.files[0];
+                    const uri = URL.createObjectURL(file);
+                    console.log(uri);
+                    document.getElementById('form').submit();
+                });
+            </script>
+        </div>
+
+        <div class="text-center">
+            <h1 class="text-3xl font-bold">
+                Classify your PDFs
+            </h1>
+
+            <p>
+                Upload your PDFs and we will sort them for you.
+            </p>
+        </div>
+    </main>
+</body>
+</html>

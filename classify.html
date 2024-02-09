@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperSort</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-[#f7f7f7] h-screen flex flex-col">
+    <header class="bg-white w-full p-4 flex justify-center">
+        <h2 class="text-xl font-semibold">
+            PaperSort
+        </h2>
+    </header>
+
+    <main class="flex justify-evenly items-center flex-1 p-5">
+        <div class="h-full w-[40%] flex flex-col items-center justify-center gap-5">
+            <embed src="Devcraft.pdf" type="application/pdf" width="100%" height="100%"/>
+
+            <a href="/home.html" class="w-full">
+                <button id="submit-btn" class="w-full bg-black/80 text-white/80 font-semibold p-3 rounded duration-150 hover:bg-black/90">
+                    Upload Again
+                </button>
+            </a>
+        </div>
+
+        <div class="text-center">
+            <h1 class="text-xl">
+                This PDF is a:
+            </h1>
+
+            <p class="text-5xl font-bold">
+                Legal Document
+            </p>
+        </div>
+    </main>
+</body>
+</html>
